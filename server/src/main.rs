@@ -1,11 +1,47 @@
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use std::time::{Duration, Instant};
+
+use actix::prelude::*;
+use actix_web::{get, Error, post, web, App, HttpResponse, HttpServer, Responder, HttpRequest};
 use actix_web_actors::ws;
+
+const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(5);
+const CLIENT_TIMEOUT: Duration = Duration::from_secs(10);
 
 struct AppState {
     app_name: String,
 }
 
-struct CampfireWs;
+struct CampfireWs {
+    hb: Instant,
+}
+
+impl CampfireWs {
+    fn new() -> Self {
+        Self { hb: Instant::now() }
+    }
+
+}
+
+impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for CampfireWs {
+    fn handle(
+        &mut self,
+        msg: Result<ws::Message, ws::ProtocolError>,
+        ctx: &mut Self::Context,
+    ) {
+        println!("Websocket: {:?}", msg);
+        match msg {
+            Ok(ws::Message::Ping(msg)) => ctx.pong(&msg),
+            Ok(ws::Message::Text(text)) => ctx.text(text),
+            Ok(ws::Message::Binary(bin)) => ctx.binary(bin),
+            _ => ctx.stop(),
+        }
+    }
+}
+
+async fn ws_index(req: HttpRequest, stream: web::Payload) -> Result<HttpResponse, Error> {
+    println!("{:?}", r);
+    let res = ws::start(CampfireWs::new(), &r, stream);
+}
 
 #[get("/")]
 async fn index(data: web::Data<AppState>) -> String {

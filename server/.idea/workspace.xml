@@ -31,10 +31,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b22a36d-f525-4e4e-9df5-0be1d1b052ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601798820858</updated>
-      <workItem from="1601798821943" duration="1122000" />
+      <workItem from="1601798821943" duration="2119000" />
     </task>
     <servers />
   </component>
@@ -109,6 +109,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="1081" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1601800235055">
+      <screen x="0" y="0" width="3840" height="2123" />
+    </state>
+    <state x="690" y="1081" width="800" height="528" key="Vcs.Push.Dialog.v2/0.0.3840.2123/3840.387.2560.1440@0.0.3840.2123" timestamp="1601800235055" />
     <state x="625" y="1035" width="930" height="620" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601798929018">
       <screen x="0" y="0" width="3840" height="2123" />
     </state>
