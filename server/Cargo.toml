@@ -14,3 +14,4 @@ actix-web-actors = "3.0.0"
 diesel = { version = "1.4.4", features = ["postgres"] }
 dotenv = "0.15.0"
 serde_json = "1.0.58"
+audiopus = "0.2.0"
