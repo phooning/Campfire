@@ -10,8 +10,6 @@ Trying to hack proximity video and voice chatting.
 
 ```bash
 cargo run
-
-# Server online at localhost:8080
 ```
 
 ## Client: React + TypeScript
