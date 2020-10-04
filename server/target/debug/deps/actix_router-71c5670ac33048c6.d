@@ -1,0 +1,12 @@
+/home/david/Documents/repos/Campfire/server/target/debug/deps/actix_router-71c5670ac33048c6.rmeta: /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/lib.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/de.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/path.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/resource.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/router.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/url.rs
+
+/home/david/Documents/repos/Campfire/server/target/debug/deps/libactix_router-71c5670ac33048c6.rlib: /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/lib.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/de.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/path.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/resource.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/router.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/url.rs
+
+/home/david/Documents/repos/Campfire/server/target/debug/deps/actix_router-71c5670ac33048c6.d: /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/lib.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/de.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/path.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/resource.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/router.rs /home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/url.rs
+
+/home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/lib.rs:
+/home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/de.rs:
+/home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/path.rs:
+/home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/resource.rs:
+/home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/router.rs:
+/home/david/.cargo/registry/src/github.com-1ecc6299db9ec823/actix-router-0.2.5/src/url.rs:
