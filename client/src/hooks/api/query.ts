@@ -1,4 +1,4 @@
-import {useRef} from "react";
+import { useRef } from "react";
 
 const useQuery = (url, propsVariables = {}, options = {}) => {
   const { lazy = false, cachePolicy = "cache-first" } = options;
