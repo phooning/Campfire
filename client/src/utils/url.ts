@@ -1,7 +1,9 @@
-import queryString from "query-string";
+import queryString, { StringifiableRecord } from "query-string";
 
-export const objectToQueryString = (obj, options = {}) =>
+const objectToQueryString = (obj: StringifiableRecord, options = {}): string =>
   queryString.stringify(obj, {
     arrayFormat: "bracket",
     ...options,
   });
+
+export { objectToQueryString };
