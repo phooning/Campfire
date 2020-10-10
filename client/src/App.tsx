@@ -3,6 +3,8 @@ import NormalizeStyles from "./styles/NormalizeStyles";
 import BaseStyles from "./styles/BaseStyles";
 import Routes from "./Routes";
 
+import "./styles/FontStyles.css";
+
 function App(): ReactElement {
   return (
     <>

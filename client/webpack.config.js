@@ -30,6 +30,15 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.(jpe?g|png|gif|woff2?|eot|ttf|otf|svg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: { limit: 15000 },
+          },
+        ],
+      },
+      {
         test: /\.(ts|tsx)?$/,
         use: "awesome-typescript-loader",
       },

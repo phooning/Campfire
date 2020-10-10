@@ -1,5 +1,9 @@
 import React, { ReactElement, useEffect, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import * as THREE from "three";
+import styled from "styled-components";
+import socket from "socket.io-client";
+import Sidebar from "./Sidebar";
 
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
@@ -8,7 +12,10 @@ const FOV = 75;
 const NEAR = 0.1;
 const FAR = 1000;
 
+const HomeWrapper = styled.div``;
+
 const Home = (): ReactElement => {
+  const history = useHistory();
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,7 +28,10 @@ const Home = (): ReactElement => {
     document.body.appendChild(renderer.domElement);
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0xff5733 });
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xff5733,
+      wireframe: true,
+    });
     const cube = new THREE.Mesh(geometry, material);
 
     scene.add(cube);
@@ -36,9 +46,15 @@ const Home = (): ReactElement => {
     };
 
     animate();
+
   }, []);
 
-  return <div ref={domRef} />;
+  return (
+    <HomeWrapper>
+      <Sidebar />
+      <div ref={domRef} />
+    </HomeWrapper>
+  );
 };
 
 export default Home;

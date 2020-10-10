@@ -3,11 +3,11 @@ import { createGlobalStyle } from "styled-components";
 import { color, font, mixin } from "./index";
 
 const BaseStyles = createGlobalStyle`
-  html, body, #root {
-    height: 100%;
-    min-height: 100%;
-    min-width: 768px;
-  }
+  //html, body, #root {
+  //  height: 100%;
+  //  min-height: 100%;
+  //  min-width: 768px;
+  //}
 
   body {
     color: ${color.textDarkest};
