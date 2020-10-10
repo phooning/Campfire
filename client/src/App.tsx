@@ -1,6 +1,7 @@
 import React, { ReactElement, useEffect, useRef } from "react";
 import * as THREE from "three";
-import NormalizeStyles from "./NormalizeStyles";
+import NormalizeStyles from "./styles/NormalizeStyles";
+import BaseStyles from "./styles/BaseStyles";
 
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
@@ -41,6 +42,7 @@ function App(): ReactElement {
   return (
     <>
       <NormalizeStyles />
+      <BaseStyles />
       <div ref={domRef} />
     </>
   );
