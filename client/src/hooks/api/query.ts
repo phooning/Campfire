@@ -8,3 +8,6 @@
 // };
 //
 // export default useQuery;
+
+
+export {}

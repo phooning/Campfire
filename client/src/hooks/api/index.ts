@@ -7,3 +7,6 @@
 //     options: Record<string, unknown>
 //   ) => useQuery(url, propsVariables, options),
 // };
+
+export {}
+
