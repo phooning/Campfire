@@ -12,10 +12,12 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "removeComments": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noImplicitAny": false,
     "noEmit": true,
     "jsx": "react"
