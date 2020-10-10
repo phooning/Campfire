@@ -27,7 +27,6 @@ const Input = forwardRef(
 
     return (
       <InputWrapper>
-        <input />
         <InputBox onChange={handleChange} ref={ref} />
       </InputWrapper>
     );

@@ -1,49 +1,21 @@
-mod constants;
+mod user;
 mod voice;
+mod chat;
+
+extern crate diesel;
 
 use std::time::{Duration, Instant};
 
 use actix::prelude::*;
 use actix_web::{get, Error, post, web, App, HttpResponse, HttpServer, Responder, HttpRequest};
 use actix_web_actors::ws;
+use diesel::prelude::*;
+use diesel::r2d2::{self, ConnectionManager};
 
-const HEARTBEAT_INTERVAL: Duration = Duration::from_secs(5);
-const CLIENT_TIMEOUT: Duration = Duration::from_secs(10);
+use user::route::{get_users, add_user, delete_user, get_user_by_id};
 
 struct AppState {
     app_name: String,
-}
-
-struct CampfireWs {
-    hb: Instant,
-}
-
-impl CampfireWs {
-    fn new() -> Self {
-        Self { hb: Instant::now() }
-    }
-
-}
-
-impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for CampfireWs {
-    fn handle(
-        &mut self,
-        msg: Result<ws::Message, ws::ProtocolError>,
-        ctx: &mut Self::Context,
-    ) {
-        println!("Websocket: {:?}", msg);
-        match msg {
-            Ok(ws::Message::Ping(msg)) => ctx.pong(&msg),
-            Ok(ws::Message::Text(text)) => ctx.text(text),
-            Ok(ws::Message::Binary(bin)) => ctx.binary(bin),
-            _ => ctx.stop(),
-        }
-    }
-}
-
-async fn ws_index(req: HttpRequest, stream: web::Payload) -> Result<HttpResponse, Error> {
-    println!("{:?}", r);
-    let res = ws::start(CampfireWs::new(), &r, stream);
 }
 
 #[get("/")]
@@ -71,8 +43,12 @@ async fn main() -> std::io::Result<()> {
             .service(index)
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
+            .route("/users", web::get().to(get_users))
+            .route("/users/{id}", web::get().to(get_user_by_id))
+            .route("/users", web::post().to(add_user))
+            .route("/users", web::delete().to(delete_user))
     })
-        .bind("127.0.0.1:8080")?
+        .bind("127.0.0.1:8090")?
         .run()
         .await
 }

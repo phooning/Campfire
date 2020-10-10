@@ -3,7 +3,7 @@ import { getStoredAuthToken, removeStoredAuthToken } from "./token";
 import { objectToQueryString } from "./url";
 
 const defaults = {
-  baseURL: process.env.API_URL || "http://localhost:8080",
+  baseURL: process.env.API_URL || "http://localhost:8081",
   headers: () => ({
     "Content-Type": "application/json",
     Authorization: getStoredAuthToken()

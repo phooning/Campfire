@@ -3,6 +3,7 @@ import * as THREE from "three";
 import styled from "styled-components";
 import socket from "socket.io-client";
 import Sidebar from "./Sidebar";
+import Chatbar from "./Chatbar";
 
 const WIDTH = window.innerWidth;
 const HEIGHT = window.innerHeight;
@@ -50,7 +51,7 @@ const Home = (): ReactElement => {
     <HomeWrapper>
       <Sidebar />
       <div ref={domRef} />
-
+      <Chatbar />
     </HomeWrapper>
   );
 };
