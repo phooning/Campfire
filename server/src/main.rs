@@ -2,6 +2,7 @@ mod user;
 mod voice;
 mod chat;
 
+#[macro_use]
 extern crate diesel;
 
 use std::time::{Duration, Instant};
@@ -13,6 +14,8 @@ use diesel::prelude::*;
 use diesel::r2d2::{self, ConnectionManager};
 
 use user::route::{get_users, add_user, delete_user, get_user_by_id};
+
+pub type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
 
 struct AppState {
     app_name: String,
@@ -35,11 +38,18 @@ async fn manual_hello() -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    HttpServer::new(|| {
+    dotenv::dotenv().ok();
+    std::env::set_var("RUST_LOG", "actix_web=debug");
+    let db_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+
+    let manager = ConnectionManager::<PgConnection>::new(db_url);
+    let pool: Pool = r2d2::Pool::builder()
+        .build(manager)
+        .expect("Failed to create pool.");
+
+    HttpServer::new(move || {
         App::new()
-            .data(AppState {
-                app_name: String::from("Campfire"),
-            })
+            .data(pool.clone())
             .service(index)
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
