@@ -32,9 +32,9 @@ const InfoTextWrapper = styled.div`
 `;
 
 const Info = styled.div`
-  color: ${color.textDark};
+  color: ${color.textLight};
   ${font.size(15)};
-  ${font.medium};
+  ${font.bold};
 `;
 
 const Sidebar = (): ReactElement => {

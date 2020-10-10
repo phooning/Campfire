@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect, useRef } from "react";
-import { useHistory } from "react-router-dom";
 import * as THREE from "three";
 import styled from "styled-components";
 import socket from "socket.io-client";
@@ -15,7 +14,6 @@ const FAR = 1000;
 const HomeWrapper = styled.div``;
 
 const Home = (): ReactElement => {
-  const history = useHistory();
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,13 +44,13 @@ const Home = (): ReactElement => {
     };
 
     animate();
-
   }, []);
 
   return (
     <HomeWrapper>
       <Sidebar />
       <div ref={domRef} />
+
     </HomeWrapper>
   );
 };
