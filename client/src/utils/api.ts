@@ -42,7 +42,8 @@ const apiWrapper = <T, R>(
         if (error.response) {
           if (error.response.data.error.code === "INVALID_TOKEN") {
             removeStoredAuthToken();
-            history.push("/authenticate");
+            // eslint-disable-next-line no-restricted-globals
+            history.pushState({}, "Authenticate", "/authenticate");
           } else {
             reject(error.response.data.error);
           }
