@@ -51,7 +51,7 @@ const Home = (): ReactElement => {
     <HomeWrapper>
       <Sidebar />
       <div ref={domRef} />
-      <Chatbar />
+      <Chatbar onChange={() => {}} />
     </HomeWrapper>
   );
 };
