@@ -1,6 +1,11 @@
 mod user;
 mod voice;
 mod chat;
+mod livestream;
+mod notifications;
+mod search;
+mod settings;
+mod webrtc;
 
 #[macro_use]
 extern crate diesel;
