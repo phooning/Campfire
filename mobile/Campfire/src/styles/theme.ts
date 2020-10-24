@@ -1,6 +1,7 @@
 import { createTheme } from '@shopify/restyle';
 import {
   DefaultTheme,
+  DarkTheme,
   Theme as NavigationTheme,
 } from '@react-navigation/native';
 
@@ -12,10 +13,12 @@ const palette = {
   black: '#0B0B0B',
   white: '#F0F2f3',
   absWhite: '#FFFFFF',
+  absBlack: '#000000',
 };
 
 const theme = createTheme({
   ...DefaultTheme,
+  isDarkMode: false,
   colors: {
     primary: palette.purplePrimary,
     text: palette.black,
@@ -40,12 +43,13 @@ export type Theme = typeof theme;
 
 export const darkTheme: Theme = {
   ...theme,
+  isDarkMode: true,
   colors: {
     ...theme.colors,
     primary: palette.purplePrimary,
     text: palette.white,
-    mainBackground: palette.black,
-    mainForeground: palette.white,
+    mainBackground: palette.absBlack,
+    mainForeground: palette.black,
   },
 };
 
@@ -62,9 +66,9 @@ export const navigationTheme: NavigationTheme = {
 };
 
 export const navigationDarkTheme: NavigationTheme = {
-  ...DefaultTheme,
+  ...DarkTheme,
   colors: {
-    ...DefaultTheme.colors,
+    ...DarkTheme.colors,
     background: darkTheme.colors.mainBackground,
     card: darkTheme.colors.mainForeground,
     primary: darkTheme.colors.primary,
