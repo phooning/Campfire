@@ -1,5 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { Text } from 'react-native';
+import { useTheme } from '@shopify/restyle';
+import { Theme } from 'styles/theme';
 
 interface ITypographyProps {
   type: 'p';
@@ -7,13 +9,15 @@ interface ITypographyProps {
 }
 
 const Typography = ({ type, children }: ITypographyProps): ReactElement => {
+  const theme = useTheme<Theme>();
+
   const getTextProps = () => {
     switch (type) {
       case 'p':
         return {
           style: [
             {
-              color: 'blue',
+              color: 'red',
             },
           ],
         };
