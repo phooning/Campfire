@@ -1,23 +1,31 @@
-import React, { ReactNode } from 'react';
-import { StyleProp, View, ViewStyle } from 'react-native';
+import React, { ReactElement } from 'react';
 import VectorIcon from 'react-native-vector-icons/MaterialIcons';
 import { IconProps } from 'react-native-vector-icons/Icon';
-import { spacing, SpacingProps, useRestyle } from '@shopify/restyle';
+import {
+  BackgroundColorProps,
+  createRestyleComponent,
+  createRestyleFunction,
+  createVariant,
+  LayoutProps,
+  SpacingProps,
+  VariantProps,
+} from '@shopify/restyle';
 import { Theme } from 'styles/theme';
+import { Box } from 'components/common';
+
+type IconVariantProps = VariantProps<Theme, 'iconVariants'> & IconProps;
 
 type IIconProps = SpacingProps<Theme> &
-  IconProps & {
-    viewProps: StyleProp<ViewStyle>;
+  BackgroundColorProps<Theme> &
+  LayoutProps<Theme> & {
+    iconProps: IconProps & IconVariantProps;
   };
 
-const restyleFunctions = [spacing];
-
-const Icon = ({ viewProps, ...rest }: IIconProps): ReactNode => {
-  const props = useRestyle(restyleFunctions, { viewProps });
+const Icon = ({ iconProps, ...rest }: IIconProps): ReactElement => {
   return (
-    <View {...props}>
-      <VectorIcon {...rest} />
-    </View>
+    <Box {...rest}>
+      <VectorIcon {...iconProps} />
+    </Box>
   );
 };
 

@@ -14,6 +14,8 @@ const palette = {
   white: '#F0F2f3',
   absWhite: '#FFFFFF',
   absBlack: '#000000',
+  faded: '#7e7e7e',
+  fadedBackground: '#303030',
 };
 
 const theme = createTheme({
@@ -24,6 +26,8 @@ const theme = createTheme({
     mainBackground: palette.white,
     mainForeground: palette.absWhite,
     cardPrimaryBackground: palette.purplePrimary,
+    faded: palette.faded,
+    fadedBackground: palette.fadedBackground,
   },
   spacing: {
     s: 8,
@@ -58,6 +62,11 @@ const theme = createTheme({
       color: 'text',
     },
   },
+  iconVariants: {
+    header: {
+      size: 20,
+    }
+  }
 });
 
 export type Theme = typeof theme;
