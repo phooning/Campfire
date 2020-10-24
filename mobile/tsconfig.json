@@ -13,13 +13,13 @@
     "baseUrl": ".",
     "paths": {
       "*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@features/*": ["src/features/*"],
-      "@screens/*": ["src/screens/*"],
-      "@stacks/*": ["src/stacks/*"],
-      "@store/*": ["src/store/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      "components/*": ["src/components/*"],
+      "features/*": ["src/features/*"],
+      "screens/*": ["src/screens/*"],
+      "stacks/*": ["src/stacks/*"],
+      "store/*": ["src/store/*"],
+      "styles/*": ["src/styles/*"],
+      "utils/*": ["src/utils/*"]
     }
   },
   "exclude": [
