@@ -17,7 +17,6 @@ const palette = {
 };
 
 const theme = createTheme({
-  ...DefaultTheme,
   isDarkMode: false,
   colors: {
     primary: palette.purplePrimary,
@@ -36,6 +35,28 @@ const theme = createTheme({
     phone: 0,
     tablet: 768,
     largeTablet: 1024,
+  },
+  textVariants: {
+    header: {
+      // fontFamily: 'ShopifySans-Bold',
+      fontWeight: 'bold',
+      fontSize: 34,
+      lineHeight: 42.5,
+      color: 'text',
+    },
+    subheader: {
+      // fontFamily: 'ShopifySans-SemiBold',
+      fontWeight: '600',
+      fontSize: 28,
+      lineHeight: 36,
+      color: 'text',
+    },
+    body: {
+      // fontFamily: 'ShopifySans',
+      fontSize: 16,
+      lineHeight: 24,
+      color: 'text',
+    },
   },
 });
 
