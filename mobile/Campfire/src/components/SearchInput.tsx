@@ -18,7 +18,8 @@ const SearchInput = ({ ...rest }: ISearchInputProps): ReactElement => {
       alignItems="center"
       justifyContent="flex-start"
       borderRadius={10}
-      backgroundColor="fadedBackground">
+      backgroundColor="fadedBackground"
+    >
       <Icon
         margin="s"
         iconProps={{
@@ -31,6 +32,7 @@ const SearchInput = ({ ...rest }: ISearchInputProps): ReactElement => {
         ref={inputRef}
         returnKeyType="search"
         placeholder="Search"
+        placeholderTextColor={theme.colors.faded}
         autoCapitalize="none"
         blurOnSubmit
         clearButtonMode="while-editing"
