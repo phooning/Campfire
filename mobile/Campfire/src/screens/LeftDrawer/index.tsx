@@ -33,16 +33,16 @@ const LeftDrawer = ({
         navigation={navigation}
         descriptors={descriptors}></DrawerContentScrollView>
       <SafeAreaView style={{ flex: 1 }} mode="margin" edges={['bottom']}>
-          <View style={styles.iconWrapper}>
-            <Typography type="t">Settings</Typography>
-            <Icon
-              marginHorizontal="m"
-              iconProps={{
-                onPress: () => {},
-                name: 'settings',
-              }}
-            />
-          </View>
+        <View style={styles.iconWrapper}>
+          <Typography type="t">Settings</Typography>
+          <Icon
+            marginHorizontal="m"
+            iconProps={{
+              onPress: () => {},
+              name: 'settings',
+            }}
+          />
+        </View>
       </SafeAreaView>
     </>
   );

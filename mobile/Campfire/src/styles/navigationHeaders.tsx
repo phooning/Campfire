@@ -10,8 +10,9 @@ type IScreenProps = {
   route: unknown;
 };
 
-export const HeaderLeftBack = React.memo<{ navigation: any; theme: Theme }>(
-  ({ navigation, theme }) => {
+export const HeaderLeftBack = React.memo<{ navigation: any }>(
+  ({ navigation }) => {
+    const theme = useTheme<Theme>();
     return (
       <Icon
         marginHorizontal="m"
@@ -30,16 +31,13 @@ export const HomeScreenOptions = ({
   navigation,
   route,
 }: IScreenProps): StackNavigationOptions => {
-  const theme = useTheme<Theme>();
   return {
     headerLeft: () => (
       <Icon
         marginHorizontal="m"
         iconProps={{
           onPress: () => navigation.openDrawer(),
-          size: theme.iconVariants.header.size,
           name: 'menu',
-          color: theme.colors.faded,
         }}
       />
     ),
@@ -58,9 +56,7 @@ export const HomeScreenOptions = ({
         marginHorizontal="m"
         iconProps={{
           onPress: () => navigation.navigate('ChatScreen'),
-          size: theme.iconVariants.header.size,
           name: 'chat',
-          color: theme.colors.faded,
         }}
       />
     ),
@@ -71,9 +67,8 @@ export const ChatScreenOptions = ({
   navigation,
   route,
 }: IScreenProps): StackNavigationOptions => {
-  const theme = useTheme<Theme>();
   return {
-    headerLeft: () => <HeaderLeftBack navigation={navigation} theme={theme} />,
+    headerLeft: () => <HeaderLeftBack navigation={navigation} />,
     headerTitle: 'Direct Messages',
   };
 };
@@ -82,9 +77,8 @@ export const SettingsScreenOptions = ({
   navigation,
   route,
 }: IScreenProps): StackNavigationOptions => {
-  const theme = useTheme<Theme>();
   return {
-    headerLeft: () => <HeaderLeftBack navigation={navigation} theme={theme} />,
+    headerLeft: () => <HeaderLeftBack navigation={navigation} />,
     headerTitle: 'Settings',
   };
 };
