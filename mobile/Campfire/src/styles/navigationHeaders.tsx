@@ -1,21 +1,35 @@
 import React from 'react';
 import { StackNavigationOptions } from '@react-navigation/stack';
 import SearchInput from 'components/SearchInput';
-import { HomeScreenNavigationProp, HomeScreenRouteProp } from 'stacks/types';
-import { NativeStackNavigationOptions } from 'react-native-screens/native-stack';
 import Icon from 'components/Icon';
 import { useTheme } from '@shopify/restyle';
 import { Theme } from 'styles/theme';
 
-type IHomeScreenOptionsProps = {
+type IScreenProps = {
   navigation: unknown;
   route: unknown;
 };
 
+export const HeaderLeftBack = React.memo<{ navigation: any; theme: Theme }>(
+  ({ navigation, theme }) => {
+    return (
+      <Icon
+        marginHorizontal="m"
+        iconProps={{
+          onPress: () => navigation.goBack(),
+          size: theme.iconVariants.header.size,
+          name: 'arrow-back-ios',
+          color: theme.colors.faded,
+        }}
+      />
+    );
+  },
+);
+
 export const HomeScreenOptions = ({
   navigation,
   route,
-}: IHomeScreenOptionsProps): StackNavigationOptions => {
+}: IScreenProps): StackNavigationOptions => {
   const theme = useTheme<Theme>();
   return {
     headerLeft: () => (
@@ -43,12 +57,34 @@ export const HomeScreenOptions = ({
       <Icon
         marginHorizontal="m"
         iconProps={{
-          onPress: () => console.log("pressed"),
+          onPress: () => navigation.navigate('ChatScreen'),
           size: theme.iconVariants.header.size,
           name: 'chat',
           color: theme.colors.faded,
         }}
       />
     ),
+  };
+};
+
+export const ChatScreenOptions = ({
+  navigation,
+  route,
+}: IScreenProps): StackNavigationOptions => {
+  const theme = useTheme<Theme>();
+  return {
+    headerLeft: () => <HeaderLeftBack navigation={navigation} theme={theme} />,
+    headerTitle: 'Direct Messages',
+  };
+};
+
+export const SettingsScreenOptions = ({
+  navigation,
+  route,
+}: IScreenProps): StackNavigationOptions => {
+  const theme = useTheme<Theme>();
+  return {
+    headerLeft: () => <HeaderLeftBack navigation={navigation} theme={theme} />,
+    headerTitle: 'Settings',
   };
 };
