@@ -8,6 +8,7 @@ import {
   createVariant,
   LayoutProps,
   SpacingProps,
+  useTheme,
   VariantProps,
 } from '@shopify/restyle';
 import { Theme } from 'styles/theme';
@@ -22,9 +23,14 @@ type IIconProps = SpacingProps<Theme> &
   };
 
 const Icon = ({ iconProps, ...rest }: IIconProps): ReactElement => {
+  const theme = useTheme<Theme>();
+  const defaultIconProps = {
+    size: theme.iconVariants.header.size,
+    color: theme.colors.faded,
+  };
   return (
     <Box {...rest}>
-      <VectorIcon {...iconProps} />
+      <VectorIcon {...defaultIconProps} {...iconProps} />
     </Box>
   );
 };

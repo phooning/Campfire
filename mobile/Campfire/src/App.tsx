@@ -9,18 +9,21 @@ import theme, {
   navigationTheme,
 } from 'styles/theme';
 import AppStack from 'stacks';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 enableScreens();
 
 const App = (): ReactNode => {
   const [darkMode, setDarkMode] = useState(true);
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : theme}>
-      <NavigationContainer
-        theme={darkMode ? navigationDarkTheme : navigationTheme}>
-        <AppStack />
-      </NavigationContainer>
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider theme={darkMode ? darkTheme : theme}>
+        <NavigationContainer
+          theme={darkMode ? navigationDarkTheme : navigationTheme}>
+          <AppStack />
+        </NavigationContainer>
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 };
 

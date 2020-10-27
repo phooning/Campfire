@@ -4,7 +4,7 @@ import { useTheme } from '@shopify/restyle';
 import { Theme } from 'styles/theme';
 
 interface ITypographyProps {
-  type: 'p';
+  type: 'p' | 't';
   children: ReactNode;
 }
 
@@ -18,6 +18,15 @@ const Typography = ({ type, children }: ITypographyProps): ReactElement => {
           style: [
             {
               color: 'red',
+            },
+          ],
+        };
+      case 't':
+        return {
+          style: [
+            {
+              color: theme.colors.faded,
+              fontWeight: 'bold',
             },
           ],
         };
