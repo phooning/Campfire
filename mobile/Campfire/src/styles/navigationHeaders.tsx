@@ -38,7 +38,6 @@ export const HomeScreenOptions = ({
     ),
     headerTitleContainerStyle: {
       flex: 1,
-      marginHorizontal: theme.spacing.l * 2,
     },
     headerRight: () => (
       <Icon
