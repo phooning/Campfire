@@ -2,6 +2,7 @@ import HomeScreen from 'screens/HomeScreen';
 import {
   ChatScreenOptions,
   HomeScreenOptions,
+  RegionScreenOptions,
   SettingsScreenOptions,
 } from 'styles/navigationHeaders';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,6 +12,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import LeftDrawer from 'screens/LeftDrawer';
 import ChatScreen from 'screens/ChatScreen';
 import SettingsScreen from 'screens/SettingsScreen';
+import RegionScreen from 'screens/RegionScreen';
 
 const HomeStacker = createStackNavigator();
 const HomeStack = (): ReactElement => {
@@ -26,20 +28,17 @@ const HomeStack = (): ReactElement => {
         component={ChatScreen}
         options={ChatScreenOptions}
       />
-    </HomeStacker.Navigator>
-  );
-};
-
-const SettingsStacker = createStackNavigator();
-const SettingsStack = (): ReactElement => {
-  return (
-    <SettingsStacker.Navigator>
-      <SettingsStacker.Screen
+      <HomeStacker.Screen
         name="SettingsScreen"
         component={SettingsScreen}
         options={SettingsScreenOptions}
       />
-    </SettingsStacker.Navigator>
+      <HomeStacker.Screen
+        name="RegionScreen"
+        component={RegionScreen}
+        options={RegionScreenOptions}
+      />
+    </HomeStacker.Navigator>
   );
 };
 
@@ -52,7 +51,6 @@ const AppStack = (): ReactElement => {
       drawerContent={LeftDrawer}
       initialRouteName="HomeStack">
       <RootStacker.Screen name="HomeStack" component={HomeStack} />
-      <RootStacker.Screen name="SettingsStack" component={SettingsStack} />
     </RootStacker.Navigator>
   );
 };

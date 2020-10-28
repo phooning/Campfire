@@ -17,7 +17,7 @@ const Typography = ({ type, children }: ITypographyProps): ReactElement => {
         return {
           style: [
             {
-              color: 'red',
+              color: 'white',
             },
           ],
         };

@@ -10,7 +10,6 @@ type ISearchInputProps = TextInputProps;
 const SearchInput = ({ ...rest }: ISearchInputProps): ReactElement => {
   const inputRef = useRef<TextInput>(null);
   const theme = useTheme<Theme>();
-  // const inputWidth = useWindowDimensions().width * 0.8;
   return (
     <Box
       onTouchEnd={() => inputRef.current?.focus()}
@@ -18,8 +17,7 @@ const SearchInput = ({ ...rest }: ISearchInputProps): ReactElement => {
       alignItems="center"
       justifyContent="flex-start"
       borderRadius={10}
-      backgroundColor="fadedBackground"
-    >
+      backgroundColor="fadedBackground">
       <Icon
         margin="s"
         iconProps={{

@@ -82,3 +82,13 @@ export const SettingsScreenOptions = ({
     headerTitle: 'Settings',
   };
 };
+
+export const RegionScreenOptions = ({
+  navigation,
+  route,
+}: IScreenProps): StackNavigationOptions => {
+  return {
+    headerLeft: () => <HeaderLeftBack navigation={navigation} />,
+    headerTitle: 'Test Region',
+  };
+};
