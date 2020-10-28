@@ -1,3 +1,8 @@
+use async_std::{fs::File, io, prelude::*, task};
+
 fn main() {
-    println!("Hello, world!");
+    let reader_task = task::spawn(async {
+
+    });
+
 }
