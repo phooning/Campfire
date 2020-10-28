@@ -1,11 +1,11 @@
 import HomeScreen from 'screens/HomeScreen';
 import {
+  CampfireScreenOptions,
   ChatScreenOptions,
   HomeScreenOptions,
   RegionScreenOptions,
   SettingsScreenOptions,
 } from 'styles/navigationHeaders';
-import { NavigationContainer } from '@react-navigation/native';
 import React, { ReactElement } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -13,6 +13,7 @@ import LeftDrawer from 'screens/LeftDrawer';
 import ChatScreen from 'screens/ChatScreen';
 import SettingsScreen from 'screens/SettingsScreen';
 import RegionScreen from 'screens/RegionScreen';
+import CampfireScreen from "screens/CampfireScreen";
 
 const HomeStacker = createStackNavigator();
 const HomeStack = (): ReactElement => {
@@ -37,6 +38,11 @@ const HomeStack = (): ReactElement => {
         name="RegionScreen"
         component={RegionScreen}
         options={RegionScreenOptions}
+      />
+      <HomeStacker.Screen
+        name="CampfireScreen"
+        component={CampfireScreen}
+        options={CampfireScreenOptions}
       />
     </HomeStacker.Navigator>
   );

@@ -92,3 +92,13 @@ export const RegionScreenOptions = ({
     headerTitle: 'Test Region',
   };
 };
+
+export const CampfireScreenOptions = ({
+  navigation,
+  route,
+}: IScreenProps): StackNavigationOptions => {
+  return {
+    headerLeft: () => <HeaderLeftBack navigation={navigation} />,
+    headerTitle: 'Campfire',
+  };
+};
