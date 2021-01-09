@@ -1,2 +1,0 @@
-# Campfire Client
-
