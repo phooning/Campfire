@@ -2,7 +2,7 @@ import React, { ReactElement, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./styles/App.scss";
 
-const Home = lazy(() => import("pages/Home"));
+const Home = lazy(() => import("pages/Home/index"));
 
 function App(): ReactElement {
   return (
