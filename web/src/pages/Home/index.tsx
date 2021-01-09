@@ -16,17 +16,6 @@ const Home = (): ReactElement => {
     setCurrentRoom(undefined);
   };
 
-  const handleSendChannelStatusChange = () => {};
-  const receiveChannelCallback = () => {};
-
-  const localConnection = new RTCPeerConnection();
-  const sendChannel = localConnection.createDataChannel("sendChannel");
-  sendChannel.onopen = handleSendChannelStatusChange;
-  sendChannel.onclose = handleSendChannelStatusChange;
-
-  const remoteConnection = new RTCPeerConnection();
-  remoteConnection.ondatachannel = receiveChannelCallback;
-
   return (
     <Container style={{ marginTop: "3em" }}>
       <Header as="h1">Campfire</Header>
